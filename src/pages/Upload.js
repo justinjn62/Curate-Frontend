@@ -30,18 +30,21 @@ const PdfUploader = () => {
       console.log("File uploaded successfully:", response.data);
 
       if (response.status == 200) {
-        const response = await axios.post(INIT_URL);
+        // const response2 = await axios.post(INIT_URL);
 
-        if (response.status == 200) {
-          console.log("Initiated Database: ", response.data);
-          sessionStorage.clear();
-          navigate("../overview");
-        }
+        axios.post(INIT_URL).then((response) => {
+          if (response.status == 200) {
+            console.log("Initiated Database: ", response.data);
+            setLoading(false);
+            sessionStorage.clear();
+            navigate("../overview");
+          }
+        });
       }
     } catch (error) {
       console.error("Error uploading file:", error);
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (

@@ -1,4 +1,5 @@
-const BACK_URL = "http://127.0.0.1:5000";
+// const BACK_URL = "http://127.0.0.1:5000";
+const BACK_URL = "https://curate-cornell-9e700cd2e9e3.herokuapp.com";
 export const UPLOAD_URL = `${BACK_URL}/upload`;
 export const INIT_URL = `${BACK_URL}/init`;
 export const OVERVIEW_URL = `${BACK_URL}/patient/overview`;

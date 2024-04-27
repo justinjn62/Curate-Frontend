@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import axios from "axios";
@@ -39,7 +35,7 @@ import { Link as RLink } from "react-router-dom";
 //   },
 // ];
 
-function CustomTabPanel(props: TabPanelProps) {
+function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -102,7 +98,7 @@ export default function ProblemSummary(props) {
   const [loading, setLoading] = useState(false);
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 

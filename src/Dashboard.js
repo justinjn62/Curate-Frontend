@@ -23,6 +23,7 @@ import PdfUploader from "./pages/Upload";
 import ProblemSummary from "./pages/ProblemSummary";
 import Document from "./pages/Document";
 import Chat from "./pages/Chat";
+import Home from "./pages/Home";
 
 // const patient = {
 //   medications: [
@@ -238,6 +239,7 @@ export default function Dashboard() {
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
               <Routes>
+                <Route path="/" element={<Home />} />
                 <Route path="/overview" element={<Summary />} />
                 <Route path="/upload" element={<PdfUploader />} />
                 <Route path="/problems" element={<ProblemSummary />} />
