@@ -6,9 +6,9 @@ import { QUERY_URL } from "../apis";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
+import { Link } from "react-router-dom";
 
 // const data = {
 //   answer:
@@ -112,9 +112,15 @@ export default function Chat() {
                     <List>
                       {answer?.citations.map((source) => (
                         <div>
-                          <ListItemText
-                            primary={source.source_path.split("/")[1]}
-                          />
+                          <Link
+                            to={`../document/${
+                              source.source_path.split("/")[1]
+                            }`}
+                          >
+                            <ListItemText
+                              primary={source.source_path.split("/")[1]}
+                            />
+                          </Link>
 
                           <Typography fontStyle="italic">
                             {source.quote}

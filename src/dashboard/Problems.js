@@ -5,6 +5,7 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Title from "./Title";
+import { Link } from "react-router-dom";
 
 export default function Problems(props) {
   return (
@@ -18,9 +19,11 @@ export default function Problems(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props?.problems?.map((row) => (
+          {props?.problems?.map((row, index) => (
             <TableRow>
-              <TableCell>{row?.name}</TableCell>
+              <TableCell>
+                <Link to={`../problems/${index}`}>{row?.name}</Link>
+              </TableCell>
               <TableCell>{row?.active ? "Active" : "Complete"}</TableCell>
             </TableRow>
           ))}

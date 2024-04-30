@@ -5,6 +5,7 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Title from "./Title";
+import { Link } from "react-router-dom";
 
 export default function Medications(props) {
   return (
@@ -21,7 +22,13 @@ export default function Medications(props) {
         <TableBody>
           {props?.medications?.map((row) => (
             <TableRow>
-              <TableCell>{row?.name}</TableCell>
+              <TableCell>
+                <Link
+                  to={"../document/".concat(row?.source_path?.split("/")[1])}
+                >
+                  {row?.name}
+                </Link>
+              </TableCell>
               <TableCell>{row?.dosage}</TableCell>
               <TableCell>{row?.active ? "Active" : "Complete"}</TableCell>
             </TableRow>

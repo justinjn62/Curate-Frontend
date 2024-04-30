@@ -243,6 +243,7 @@ export default function Dashboard() {
                 <Route path="/overview" element={<Summary />} />
                 <Route path="/upload" element={<PdfUploader />} />
                 <Route path="/problems" element={<ProblemSummary />} />
+                <Route path="/problems/:idx" element={<ProblemSummary />} />
                 <Route path="/document/:id" element={<Document />} />
                 <Route path="/chat" element={<Chat />} />
               </Routes>

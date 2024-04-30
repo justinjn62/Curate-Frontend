@@ -12,7 +12,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { Link as RLink } from "react-router-dom";
+import { Link as RLink, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // const data = [
 //   {
@@ -97,6 +98,8 @@ export default function ProblemSummary(props) {
   const [documentsData, setDocumentsData] = useState();
   const [loading, setLoading] = useState(false);
   const [value, setValue] = React.useState(0);
+  const { idx } = useParams();
+  const location = useLocation();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -125,6 +128,10 @@ export default function ProblemSummary(props) {
         }
       }
       setLoading(false);
+      console.log(idx);
+      if (idx) {
+        setValue(parseInt(idx));
+      }
     };
 
     fetchData();
